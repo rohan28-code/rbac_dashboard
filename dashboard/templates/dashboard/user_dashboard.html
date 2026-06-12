@@ -1,0 +1,35 @@
+{% extends 'dashboard/base.html' %}
+
+{% block content %}
+
+<div class="mb-6">
+    <h2 class="text-2xl font-bold text-gray-800">Welcome, {{ request.user.username }} 👋</h2>
+    <p class="text-gray-500 text-sm mt-1">You are logged in as <span class="font-semibold text-gray-700">Normal User</span></p>
+</div>
+
+<div class="bg-white rounded-2xl shadow overflow-hidden">
+    <table class="w-full text-sm text-left">
+        <thead class="bg-gray-50 text-gray-600 uppercase text-xs">
+            <tr>
+                <th class="px-6 py-4">#</th>
+                <th class="px-6 py-4">Title</th>
+                <th class="px-6 py-4">Description</th>
+            </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-100">
+            {% for project in projects %}
+            <tr class="hover:bg-gray-50 transition">
+                <td class="px-6 py-4 text-gray-400">{{ forloop.counter }}</td>
+                <td class="px-6 py-4 font-medium text-gray-800">{{ project.title }}</td>
+                <td class="px-6 py-4 text-gray-500">{{ project.description }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="3" class="px-6 py-8 text-center text-gray-400">No projects available.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
