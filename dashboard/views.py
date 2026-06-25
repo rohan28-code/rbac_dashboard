@@ -57,9 +57,7 @@ def project_edit(request, id):
         )
 
         if form.is_valid():
-
             form.save()
-
             return redirect('project_list')
 
     else:
