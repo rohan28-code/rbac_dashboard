@@ -1,4 +1,3 @@
-# Step 1: Lightweight Ubuntu base image with Python 3
 FROM python:3.11-slim
 
 # Step 2: Install dependencies
@@ -15,7 +14,6 @@ RUN pip install django
 ENV PORT=8000
 EXPOSE $PORT
 
-COPY entrypoint.sh .
 RUN chmod +x entrypoint.sh
 
 ENTRYPOINT ["./entrypoint.sh"]

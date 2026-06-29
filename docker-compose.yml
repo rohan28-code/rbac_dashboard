@@ -2,9 +2,9 @@ services:
   web:
     build: .
     ports:
-      - "${PORT:-8080}:${PORT:-8080}"
+      - "${PORT:-8000}:${PORT:-8000}"
     environment:
-      - PORT=${PORT:-8080}
+      - PORT=${PORT:-8000}
     volumes:
       - db_data:/app/data
     restart: always

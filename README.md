@@ -35,7 +35,7 @@ A Django web app with Role-Based Access Control (RBAC). Supports two user roles 
 
 1. Clone the repository
     ```bash
-    git clone https://github.com/<your-username>/rbac_dashboard.git
+    git clone https://github.com/rohan28-code/rbac_dashboard.git
     cd rbac_dashboard
     ```
 
